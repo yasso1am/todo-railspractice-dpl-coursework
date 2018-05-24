@@ -1,0 +1,10 @@
+<h1> Todo List <h1>
+<% @pages.each do |page| %>
+  <h1> Todos </h1>
+  <p> <%= link_to 'New Todo', new_page_path %> </p>
+  
+  <h2>
+  <%= page.todo %>
+  </h2>
+  <%= link_to 'Show Page', page_path(page) %>
+<% end %>
