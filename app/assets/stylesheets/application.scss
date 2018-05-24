@@ -14,3 +14,17 @@
  *= require_self
  */
  @import "materialize";
+
+ body {
+   text-align: center;
+   margin: 50px;
+ }
+
+.button {
+  color: red;
+   margin: 20px;
+ }
+ 
+ h1 {
+   text-decoration: underline;
+ }
