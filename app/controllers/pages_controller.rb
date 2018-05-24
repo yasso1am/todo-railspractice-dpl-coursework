@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.new(page_params)
+    @page = Page.new(pages_params)
 
     if @page.save
       redirect_to pages_path
@@ -20,11 +20,26 @@ class PagesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @page = Page.find(params[:id])
+  end
+
+  def update
+    @page = Page.find(params[:id])
+
+    if @page.update(pages_params)
+      redirect_to pages_path
+    else
+      render :description
+    end
+  end
+
   
   private
 
     def pages_params
       params.require(:page).permit(:todo, :duedate, :description)
     end
-    
+
 end
